@@ -183,12 +183,14 @@ body{font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var
     <div class="pcard" onclick="togglePhase('s1a')"><div class="pcard-n">Stage 1 · Step 1</div><div class="pcard-name">Input collection</div><div class="pcard-desc">Gather raw material. No summarising.</div></div>
     <div class="pcard" onclick="togglePhase('s1b')"><div class="pcard-n">Stage 1 · Step 2</div><div class="pcard-name">Input audit</div><div class="pcard-desc">Assess, challenge, gap-fill.</div></div>
     <div class="pcard" onclick="togglePhase('s1c')"><div class="pcard-n">Stage 1 · Step 3</div><div class="pcard-name">Brief creation</div><div class="pcard-desc">Full brief. Quality gate before Stage 2.</div></div>
+    <div class="pcard" onclick="togglePhase('s1d')"><div class="pcard-n">Stage 1 · Step 4</div><div class="pcard-name">Intake meeting prep</div><div class="pcard-desc">Gaps to fill. Questions to probe. Before the client call.</div></div>
     <div class="pcard" onclick="togglePhase('s2a')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Market reality check</div><div class="pcard-desc">Full brief. Closes with 3 actions.</div></div>
     <div class="pcard" onclick="togglePhase('s2b')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Success profile</div><div class="pcard-desc">60-second test required.</div></div>
     <div class="pcard" onclick="togglePhase('s2c')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Search strategy + targets</div><div class="pcard-desc">Translates Section C into named companies. Scored and ranked.</div></div>
     <div class="pcard" onclick="togglePhase('s2d')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Outreach by archetype</div><div class="pcard-desc">3 variants. Zero generic phrases.</div></div>
     <div class="pcard" onclick="togglePhase('s2e')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Client advisory</div><div class="pcard-desc">Full brief. ONE THING close.</div></div>
     <div class="pcard" onclick="togglePhase('s2f')"><div class="pcard-n">Stage 2 · Capture</div><div class="pcard-name">Intelligence capture</div><div class="pcard-desc">Paste anything. Confirm each delta.</div></div>
+    <div class="pcard" onclick="togglePhase('s2i')"><div class="pcard-n">Stage 2 · Execute</div><div class="pcard-name">Candidate fit assessment</div><div class="pcard-desc">Brief + candidate profile. Match rating and send/no send.</div></div>
     <div class="pcard" onclick="togglePhase('s2g')"><div class="pcard-n">Stage 2 · Maintain</div><div class="pcard-name">Brief re-audit</div><div class="pcard-desc">Hard triggers. 3 actions close.</div></div>
     <div class="pcard" onclick="togglePhase('s2h')"><div class="pcard-n">Stage 2 · Close</div><div class="pcard-name">End-of-search debrief</div><div class="pcard-desc">What the brief got right and wrong.</div></div>
   </div>
@@ -243,7 +245,20 @@ body{font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var
     <div class="gate"><div class="gate-l">Section C — what it is and is not</div><div class="gate-t">Section C is search intelligence — the strategic layer that makes p6 possible. Where talent concentrates, what company types produce this profile, non-obvious pools to investigate. It is NOT a list of named companies. That list is the output of running p6, not something built into the brief.</div></div>
   </div>
 
-  <div class="pdet" id="detail-s2a">
+  <div class="pdet" id="detail-s1d">
+    <h3>Step 4 — Intake meeting preparation</h3>
+    <p>Run after the input audit and before (or immediately after) the intake call with the client. Uses everything gathered so far to produce a targeted prep sheet — gaps to fill, assumptions to challenge, things to probe. Output is a structured agenda for the call, not a brief.</p>
+    <div class="draws" style="margin-bottom:1rem"><span class="draws-l">Inputs and audit responses · feeds</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
+    <ul class="cl">
+      <li><div class="chk" onclick="toggleChk(this)"></div>High-priority gaps identified from input audit</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Assumptions that must be validated in person</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Probing questions prepared per risk area</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Interview process clarification questions included</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Comp and equity questions prepared</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Call outputs fed back into brief creation (Step 3)</li>
+    </ul>
+    <div class="gate"><div class="gate-l">When to run</div><div class="gate-t">Run p13 before the intake call to prepare. Run p2 (input audit) first — the audit surfaces the gaps, the intake prep turns those gaps into a structured call agenda. After the call, feed answers into Step 3 brief creation.</div></div>
+  </div>
     <h3>Execute — Market reality check</h3>
     <p>Generated from the full brief. Closes with 3 immediate actions, 1 thing to stop, 1 experiment to run.</p>
     <div class="draws" style="margin-bottom:1rem"><span class="draws-l">Full brief · anchors in</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
@@ -365,6 +380,22 @@ body{font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var
       <li><div class="chk" onclick="toggleChk(this)"></div>What would change if starting again</li>
       <li><div class="chk" onclick="toggleChk(this)"></div>One thing for the next search captured</li>
     </ul>
+  </div>
+
+  <div class="pdet" id="detail-s2i">
+    <h3>Execute — Candidate fit assessment</h3>
+    <p>Paste the full brief plus everything available on the candidate — CV, LinkedIn, conversation notes, any other signals. Returns a structured suitability rating with specific match and misalignment analysis and a clear send/no send recommendation. Run before deciding whether to submit a candidate to the client.</p>
+    <div class="draws" style="margin-bottom:1rem"><span class="draws-l">Full brief + candidate profile · anchors in</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
+    <ul class="cl">
+      <li><div class="chk" onclick="toggleChk(this)"></div>Full brief pasted</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>All available candidate material pasted</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Match rating received [Very strong / Strong / Weak / Very weak]</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Specific match areas identified</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Specific misalignment areas identified</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Send / no send recommendation with rationale</li>
+      <li><div class="chk" onclick="toggleChk(this)"></div>Key questions to ask candidate before submitting (if any)</li>
+    </ul>
+    <div class="gate"><div class="gate-l">Input quality matters</div><div class="gate-t">The more candidate material provided, the more accurate the assessment. CV alone is the minimum. Add conversation notes, LinkedIn, any unscripted content available. A thin candidate input produces a thin assessment.</div></div>
   </div>
 </div>
 
@@ -565,6 +596,64 @@ SECTION D — CONFIDENCE AND GAPS
 — VERSION: v1.0 — [date]
 
 After Section D, confirm all 9 brief quality gate items are met before Stage 2 begins.<button class="cbtn" onclick="copyText('p3',this,event)">Copy</button></div>
+    </div></div>
+  </div>
+
+  <div class="plabel">Stage 1 — Prepare · run before intake call with client</div>
+
+  <div class="prom" onclick="togglePrompt(this)">
+    <div class="phdr"><span class="tag tag-core">Core · Step 4</span><span class="ptitle">Intake meeting preparation</span><div class="stags"><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div><span class="pchev">▾</span></div>
+    <div class="pbody"><div class="pbody-i">
+      <div class="pnote">Run after the input audit and before the intake call. Turns audit gaps and assumptions into a structured call agenda. Output is a targeted prep sheet — not a brief. Feed call answers back into Step 3 brief creation.</div>
+      <div class="draws"><span class="draws-l">Inputs and audit responses · feeds</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
+      <div class="ptext" id="p13">I have completed the input audit for this mandate. The inputs and audit responses are above.
+
+I have an intake call with the client coming up. Prepare me for it.
+
+CALL OBJECTIVE
+One sentence — what this call must achieve above all else.
+
+CRITICAL GAPS TO FILL
+From the input audit: which gaps, if left unfilled after this call, would most compromise the quality of the brief? List in priority order. For each:
+— THE GAP: [what we don't know]
+— WHY IT MATTERS: [what decision changes depending on the answer]
+— HOW TO ASK IT: [a specific, natural question to get the answer without sounding like a questionnaire]
+
+ASSUMPTIONS TO CHALLENGE
+From the input audit: which assumptions baked into our current understanding are most likely to be wrong? For each:
+— THE ASSUMPTION: [what we have assumed]
+— WHAT TO PROBE: [how to test it in conversation without telegraphing the assumption]
+
+ROLE AND SUCCESS PROFILE PROBES
+Questions to get beneath the JD and understand what success actually looks like:
+— What does the person who thrives here look like vs. the person who struggles?
+— What does the hiring manager wish they could say in the JD but can't?
+— What did the last person in this role do wrong (if applicable)?
+— What does the first 90 days actually involve?
+
+INTERVIEW PROCESS CLARIFICATION
+If interview process details are missing or incomplete:
+— Who is involved at each stage and what is their role in the decision?
+— What does the hiring manager care about most vs. what does each interviewer care about?
+— What has caused strong candidates to fail at this client before?
+
+COMP AND EQUITY PROBES
+If comp range is unknown or vague:
+— What is the approved budget range?
+— What does their best current engineer earn?
+— What equity structure and vesting are on offer?
+
+DECISION-MAKING AND PROCESS PROBES
+— Who has final say on hire?
+— What is the realistic timeline from first interview to offer?
+— How quickly can they move when they find the right person?
+— What has caused previous searches to stall?
+
+WATCH FOR IN THE CALL
+Two or three signals that, if you observe them, should change how you run this search. Things the client might say or do that reveal a constraint, risk, or opportunity not visible in the inputs.
+
+AFTER THE CALL
+Key things to update in the brief based on what you learn. Flag which sections (A, B, C, D) are most likely to change.<button class="cbtn" onclick="copyText('p13',this,event)">Copy</button></div>
     </div></div>
   </div>
 
@@ -820,6 +909,59 @@ Specific salary and equity recommendation with market rationale. If Section A ra
 
 ONE THING
 The single most important action the client can take right now.<button class="cbtn" onclick="copyText('p9',this,event)">Copy</button></div>
+    </div></div>
+  </div>
+
+  <div class="prom" onclick="togglePrompt(this)">
+    <div class="phdr"><span class="tag tag-exec">Execute</span><span class="ptitle">Candidate fit assessment</span><div class="stags"><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div><span class="pchev">▾</span></div>
+    <div class="pbody"><div class="pbody-i">
+      <div class="pnote">Full brief plus all available candidate material. Returns a structured match rating, specific areas of alignment and misalignment, and a clear send/no send recommendation. Run before submitting any candidate to the client. More candidate material = better assessment.</div>
+      <div class="draws"><span class="draws-l">Full brief + candidate profile · anchors in</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
+      <div class="ptext" id="p14">The Master Intelligence Brief is above.
+
+CANDIDATE MATERIAL:
+[Paste everything available — CV, LinkedIn profile, conversation notes, interview notes, social content, anything else. Label each source. The more provided, the more accurate the assessment.]
+
+Assess this candidate's fit against the brief.
+
+OVERALL MATCH RATING
+[Very strong / Strong / Weak / Very weak]
+One sentence rationale for the rating.
+
+SECTION B MATCH — SUCCESS PROFILE
+Score against each element of the Section B success profile:
+— Archetype fit: [Strong / Partial / Weak] — specific evidence from candidate material
+— Environment fit: [Strong / Partial / Weak] — what in their background suggests they will or won't thrive here
+— Career arc: [Strong / Partial / Weak] — does their trajectory point toward this role naturally?
+— Technical signals: [Strong / Partial / Weak] — specific evidence from CV, GitHub, or conversation
+
+SECTION A MATCH — FACTUAL CONSTRAINTS
+— Comp expectations vs. Section A range: [Within range / Above range / Unknown]
+— Location / remote alignment: [Yes / No / Partial]
+— Seniority alignment: [Yes / No / Borderline]
+— Tech stack overlap: [Strong / Partial / Weak]
+
+STRONGEST MATCH AREAS
+Up to 3 specific things about this candidate that make them compelling for this role. Be concrete — reference actual evidence from the candidate material.
+
+MISALIGNMENT AND RISKS
+Up to 3 specific concerns. For each:
+— THE CONCERN: [what specifically]
+— RISK LEVEL: [Low / Medium / High]
+— HOW TO PROBE: [what to ask or check before submitting]
+
+SECTION B MOTIVATION CHECK
+Based on the candidate material: do their motivators align with what Section B says will move this archetype? What evidence supports or contradicts this?
+
+SEND RECOMMENDATION
+[Send / Do not send / Send pending answers to the following questions]
+
+If "Send pending": list the specific questions that must be answered before submitting — maximum 3.
+
+If "Do not send": state the single most important reason in one sentence.
+
+SUBMISSION FRAMING
+If recommending to send: one paragraph on how to position this candidate to the client. What to lead with. What to contextualise. What not to mention unprompted.<button class="cbtn" onclick="copyText('p14',this,event)">Copy</button></div>
     </div></div>
   </div>
 
