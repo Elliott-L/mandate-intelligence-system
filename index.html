@@ -78,10 +78,10 @@ body{font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var
 .chk{width:15px;height:15px;border:0.5px solid var(--border-strong);border-radius:3px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background:var(--surface);cursor:pointer;font-size:9px;color:transparent;transition:all .1s}
 .chk.on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
 .prom{background:var(--surface);border:0.5px solid var(--border-mid);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden}
-.phdr{display:flex;align-items:center;gap:10px;padding:1rem 1.25rem;cursor:pointer;transition:background .1s}.phdr:hover{background:var(--raised)}
+.phdr{display:flex;align-items:center;gap:10px;padding:1rem 1.25rem;cursor:pointer;transition:background .1s;flex-wrap:nowrap;min-width:0}.phdr:hover{background:var(--raised)}
 .tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.8px;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:var(--raised);color:var(--muted);border:0.5px solid var(--border-mid);flex-shrink:0}
 .tag-core{background:#1a1a2e;color:#e8e8f0;border-color:#1a1a2e}.tag-exec{background:var(--deep)}.tag-new{background:#eaf5ee;color:#1a5c2a;border-color:#90d0a0}
-.ptitle{font-size:13px;font-weight:500;color:var(--ink);flex:1}
+.ptitle{font-size:13px;font-weight:500;color:var(--ink);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .stags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0}
 .pchev{font-size:11px;color:var(--hint);transition:transform .2s;flex-shrink:0}.prom.open .pchev{transform:rotate(180deg)}
 .pbody{display:none}.prom.open .pbody{display:block}
@@ -873,6 +873,78 @@ WHAT HAPPENS NEXT
 One clear, low-friction next step.
 
 DO NOT include: generic descriptions, mission statement language, requirements list, HR boilerplate, or anything that reads like a job board posting.<button class="cbtn" onclick="copyText('p8',this,event)">Copy</button></div>
+    </div></div>
+  </div>
+
+  <div class="prom" onclick="togglePrompt(this)">
+    <div class="phdr"><span class="tag tag-exec">Execute</span><span class="ptitle">Candidate brief — HTML</span><div class="stags"><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div><span class="pchev">▾</span></div>
+    <div class="pbody"><div class="pbody-i">
+      <div class="pnote">Full brief in context. Produces a single self-contained HTML file — Kalpa-branded, fully designed, candidate-facing. 15 sections with numbered headers, stat cards, architecture diagrams, team cards, interview process track, cover pills, and CTA. Omit sections where intelligence is thin rather than padding. Audit cover pills and links before sending — remove anything unannounced or not yet public.</div>
+      <div class="draws"><span class="draws-l">Full brief · anchors in</span><span class="pill pa">A</span><span class="pill pb">B</span><span class="pill pc">C</span><span class="pill pd">D</span></div>
+      <div class="ptext" id="p8b">You are an expert recruitment marketing writer specialising in candidate-facing briefs for specialist technology searches. You write with precision, honesty, creativity and commercial credibility. You limit hype, corporate language, or generic descriptions. You know the difference between what a recruiter needs to know and what a candidate needs to read — and you only ever write for the candidate.
+
+Using the full Master Intelligence Brief, create a candidate-facing HTML brief. Anchor primarily in Section A (factual company and role context) and Section B (what makes this role compelling). Use Section C for CVP and sourcing context. Note any Section D gaps that affect what can be stated with confidence. If Section B archetype detail is limited or absent, derive the candidate profile from Section A role requirements and any confirmed team comparators.
+
+THE READER: [paste Section B archetype / success profile description]
+
+OUTPUT FORMAT
+Produce a single self-contained HTML file with the following:
+
+Kalpa header bar: sticky, black (#0f0f0f), Kalpa wordmark on the left linking to https://elliott-l.github.io/Kalpa/index-v3.html, tagline "Specialist search · Research, investment & trading technology" hidden on mobile (max-width: 768px), and Elliott@tech.associates on the right. Matching black footer. Add <meta name="robots" content="noindex, nofollow"> in the head.
+
+Content column: max-width 740px, centred, cream background (#f8f7f4), clean sans-serif, generous whitespace.
+
+Numbered sections with grey circle headers. Grey box components for data-heavy content (metrics, team cards, interview stages, case studies). Colour-coded cards only where meaning is encoded (green = must-haves, blue = success markers).
+
+SECTIONS — IN THIS ORDER
+
+01 · A window into [company] — italic serif pull quote, 3–4 sentences. What's rare about this company and why this role exists right now. End with one line in smaller text that reframes what kind of role this actually is.
+
+02 · Company overview — what they do, business model, key metrics as stat cards if available, funding as cards if available. Omit metrics or funding cards if not confirmed in the brief.
+
+03 · Why this company is interesting — 4 thesis cards (2×2 grid). Each has a label, a bold claim, and 2–3 sentences of evidence. Derived from Section B motivators and Section A facts only. If fewer than 4 strong thesis points are evidenced, use fewer cards rather than padding with weak ones.
+
+04 · Product & technical system — prose description of what the company has built and how it works. Include an architecture flow diagram if there is a meaningful technical pipeline. Note what is proprietary vs commodity. Omit this section entirely if the role is non-technical and product architecture is not relevant to the candidate.
+
+05 · The role — deep dive — must-haves as green card (second-person bullets, no jargon), what success looks like as blue card (0–3 months / 3–12 months / ongoing), then a timeline using whichever cadence rows are relevant to this specific role. Omit cadence rows that don't apply. Two strong bullets beat four weak ones.
+
+06 · Tech stack — chip rows by category. Omit this section entirely if the role is non-technical or no stack detail is confirmed.
+
+07 · Team & structure — render whatever leadership and team context is available. If there are named founders or senior leaders with strong and relevant backgrounds, use leader cards (up to 3-up grid) with avatar initials, role, badges, brief bio, and links where available. If no named individuals are confirmed, describe the team structure in prose only. Where individual team members below leadership are confirmed, show them in a 2-up grid labelled "Snapshot of existing (and growing) team". Omit the team grid entirely if no team detail is confirmed.
+
+08 · Culture & ways of working — prose only, up to 3 paragraphs. Derived from Section B environment fit and Section A confirmed culture signals. If limited culture intelligence is available, keep to one paragraph.
+
+09 · Who this is for — purple block, second-person bullets, heading "Does this sound like you?" Drawn from Section B success profile or derived from Section A role requirements. 6–9 bullets.
+
+10 · Compensation & upside — 2-column grey block with base and equity. If only base is confirmed, show base with a note that full package is discussed at offer stage. Omit equity entirely if not relevant.
+
+11 · Location & logistics — prose, one paragraph.
+
+12 · Customers & case studies — 3-up case study cards with stat figures and context. Omit entirely if no named customers or confirmed outcomes are available.
+
+13 · Growth opportunity — grey block with 3–4 items specific to this role and company. Every item must be evidenced by something in the brief. No generic growth language.
+
+14 · Why you might want to explore further — green block, numbered list of 4–5 points. Each must be specific to this opportunity.
+
+15 · Interview process — process track graphic with one dot per confirmed stage, then a grey box for each stage describing what happens. Render however many stages are confirmed. No pass rate statistics.
+
+→ What happens next — CTA block with Elliott@tech.associates and relevant links.
+
+COVER PILLS
+Generate all relevant pills from the brief. Include any that are confirmed: funding round and total raised, growth signal, compensation range, location and work format, key investors, company stage, headcount, any standout metric. Use green pills for traction and growth signals, blue for role and logistics, purple for investors and backers. Present all confirmed ones — the human will audit and remove anything not yet public.
+
+COVER LINKS
+Generate all potentially relevant links from the brief: company website, engineering or product blog, founder or CTO personal site, GitHub, YC listing, company LinkedIn, public technical writing, talks, or press. Present all — the human will audit and remove any not appropriate for candidates.
+
+WRITING RULES — NON-NEGOTIABLE
+Write entirely in candidate-facing language. No internal notes, no internal terminology, no qualifiers like "confirmed by client".
+Strip all company-specific internal jargon from candidate-facing sections. Technical architecture sections may use specific tool and system names — everywhere else, use plain language.
+Never include: rejection criteria, anti-signals, filter language, pass rates, attrition statistics, or anything framed as a screen.
+Never include a "Who this is not for" section.
+Must-haves in section 05: second-person bullets. No negative framing.
+Success looks like: second person, outcome-focused. No internal project names the candidate won't recognise.
+Compensation: state the confirmed range. If equity is unconfirmed, write "equity discussed at offer stage".
+Omit rather than pad: if a section lacks sufficient confirmed intelligence, omit it or compress to what is known. A shorter honest brief beats a longer padded one.<button class="cbtn" onclick="copyText('p8b',this,event)">Copy</button></div>
     </div></div>
   </div>
 
